@@ -1,0 +1,15 @@
+services:
+  rust_api_db:
+    container_name: rust_api_db2
+    image: postgres:alpine
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=sherry
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=rust_api_database
+    volumes:
+      - rust_api_data:/var/lib/postgresql/data
+
+volumes:
+  rust_api_data: {}
